@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <a href="/cadastrar">[Cadastrar novo produto]</a>
+    <ul>
+        {% for p in produtos %}
+            <li>
+                {{ p.nome }} -- {{ p.categoria }} - {{ p.tamanho }} - {{ p.cor }} - {{ p.quantidade }}
+                <a href="/editar/{{ p.id }}">[Editar]</a>
+                <a href="/excluir/{{ p.id }}">[Excluir]</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
